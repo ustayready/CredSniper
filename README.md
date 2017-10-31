@@ -42,6 +42,7 @@ optional arguments:
 ```
 ### Credentials
 **.cache** : Temporarily store username/password when phishing 2FA
+
 **.sniped** : Flat-file storage for captured credentials and other information
 
 ### API End-point
