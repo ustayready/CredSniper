@@ -95,9 +95,13 @@ Then, to run manually use the following commands:
 ## Screenshots
 ### Gmail Module
 ![GmailLogin](https://raw.githubusercontent.com/ustayready/CredSniper/master/screenshots/gmail_login.png "GmailLogin")
+
 ![GmailPassword](https://raw.githubusercontent.com/ustayready/CredSniper/master/screenshots/gmail_password.png "GmailPassword")
+
 ![GmailSMS](https://raw.githubusercontent.com/ustayready/CredSniper/master/screenshots/gmail_sms.png "GmailSMS")
+
 ![GmailAuthenticator](https://raw.githubusercontent.com/ustayready/CredSniper/master/screenshots/gmail_authenticator.png "GmailAuthenticator")
+
 ![GmailTouch](https://raw.githubusercontent.com/ustayready/CredSniper/master/screenshots/gmail_touch.png "GmailTouch")
 
 ## Maintainer
