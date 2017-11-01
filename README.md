@@ -32,12 +32,12 @@ usage: **credsniper.py** [-h] --module MODULE [--twofactor] [--port PORT] [--ssl
 ```
 optional arguments:
   -h, --help           show this help message and exit
-  --module MODULE      phishing module
+  --module MODULE      phishing module name - for example, "gmail"
   --twofactor          enable two-factor phishing
   --port PORT          listening port (default: 80/443)
   --ssl                use SSL via Let's Encrypt
-  --verbose            verbose output
-  --final FINAL        final url destination
+  --verbose            enable verbose output
+  --final FINAL        final url the user is redirected to after phishing is done
   --hostname HOSTNAME  hostname for SSL
 ```
 ### Credentials
@@ -93,6 +93,9 @@ Then, to run manually use the following commands:
 (CredSniper) ~/CredSniper$ python credsniper.py --help
 ```
 
+Note that Python 3 is required.
+
+
 ## Screenshots
 ### Gmail Module
 ![GmailLogin](https://raw.githubusercontent.com/ustayready/CredSniper/master/screenshots/gmail_login.png "GmailLogin")
@@ -110,8 +113,8 @@ Then, to run manually use the following commands:
 
 ## Contributing
 
-1. Create an issue to discuss about your idea
-2. Fork it (https://github.com/ustayready/CredSniper/fork)
+1. Create an issue to discuss your idea
+2. Fork CredSniper (https://github.com/ustayready/CredSniper/fork)
 3. Create your feature branch (`git checkout -b my-new-feature`)
 4. Commit your changes (`git commit -am 'Add some feature'`)
 5. Push to the branch (`git push origin my-new-feature`)
