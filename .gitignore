@@ -1,0 +1,4 @@
+*.pyc
+venv
+.cache
+.sniped
