@@ -76,9 +76,9 @@ All modules can be loaded by passing the `--module <name>` command to CredSniper
 **GMAIL UPDATE:** Google requires a backup form of 2FA when using U2F. Bypassing U2F is possible by forcing one of the fall-back options instead of prompting the user to use their U2F device. CredSniper attempts to force SMS if it's available otherwise it forces TOTP. For security savvy victims, they may be weary if they are prompted for the SMS or TOTP token instead of their U2F device. 
 
 * **Example**: An example module that demonstrates standard phishing w/ 2FA tokens
-        * **modules/example/example.py**: Main module loaded w/ --module example
-        * **modules/example/templates/login.html**: Standard login form
-        * **modules/example/templates/twofactor.html**: Standard 2FA token form
+	* **modules/example/example.py**: Main module loaded w/ --module example
+	* **modules/example/templates/login.html**: Standard login form
+	* **modules/example/templates/twofactor.html**: Standard 2FA token form
          
 ## Installation ##
 
