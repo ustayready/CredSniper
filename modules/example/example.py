@@ -53,7 +53,7 @@ class ExampleModule(BaseModule):
         self.two_factor_token = request.values.get('two_factor_token')
         self.two_factor_type = request.values.get('two_factor_type')
 
-        city, state, zip_code = '','',''
+        city, region, zip_code = '','',''
         try:
             geoip_url = 'https://freegeoip.net/json/{}'.format(
                 request.remote_addr
